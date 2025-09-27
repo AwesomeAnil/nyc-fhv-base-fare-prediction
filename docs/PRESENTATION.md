@@ -2,6 +2,24 @@
 
 ---
 
+# Table of Contents
+
+1. 🚖 NYC FHV Base Fare Prediction  
+2. 🎯 Business Problem  
+3. 📊 Data & EDA Overview  
+4. 🔍 Univariate Analysis (Base Passenger Fares)  
+5. 🔗 Bivariate Analysis (Examples)  
+6. 🛠 Feature Engineering  
+7. 🤖 Modeling  
+   - 📊 Feature Impact (Standardized Coefficients)  
+8. 🔮 Predictions on New Data  
+9. 💼 Business Impact  
+10. ✅ Takeaways  
+11. 📌 Next Steps  
+12. ⚡ End of Presentation ⚡
+
+---
+
 ## 🎯 Business Problem
 
 NYC High-Volume For Hire (FHV) operators and regulators face several challenges:
@@ -93,6 +111,7 @@ NYC High-Volume For Hire (FHV) operators and regulators face several challenges:
 
 **Driver Pay Distribution**
 
+![EDA Driver Pay Distribution](/images/EDA_Driver_Pay.png)
 
 ---
 
