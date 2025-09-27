@@ -18,15 +18,65 @@ NYC High-Volume For Hire (FHV) operators and regulators face several challenges:
 
 ## 📊 Data & EDA Overview
 
-* **Source**: NYC TLC High-Volume FHV Trip Records.
-* **Features analyzed**:
+**Source**: NYC TLC High-Volume FHV Trip Records.
+**Features analyzed**:
 
-  * Trip time
-  * Tolls
-  * Congestion surcharge
-  * Airport fee
-  * Tips
-  * Flags (shared ride, airport, access-a-ride)
+* base_passenger_fare
+   - Mean: $27.55
+   - Median: $19.99
+   - Min/Max: $6.19 – $129.90
+   - Std Dev: 22.73
+   - IQR: 12.67 – 33.57
+   - Fare distribution is right-skewed with many low-to-mid fares and some high fares inflating the mean. Typical fares are between $12–$34
+* driver_pay_per_mile
+   - Mean: 5.54
+   - Median: 4.91
+   - Min/Max: 2.44 – 18.30
+   - Std Dev: 2.69
+   - IQR: 3.84 – 6.30
+   - Most trips have driver pay around $4–$6 per mile. Some trips have extremely high pay rates (up to 18.3), creating right-skewness.
+* trip_miles
+   - Mean: 5.00 miles
+   - Median: 3.03 miles
+   - Min/Max: 0.48 – 27.69 miles
+   - Std Dev: 5.20
+   - IQR: 1.56 – 6.42 miles
+   - Most trips are short to moderate distance. The median is lower than the mean, indicating a right-skewed distribution with some long trips (up to 27.69 miles) driving the mean upward.
+* Trip time:
+  - Mean: 1209.28 minutes (~20 hours – seems unusually high; likely units issue or aggregated trips)
+  - Median: 978 minutes (~16 hours)
+  - Min/Max: 194 – 4459 minutes (~3 hours to 74 hours)
+  - Std Dev: 846.95
+  - IQR: 600 – 1566 minutes
+  - There is very high variability in trip times. Right-skewed with extreme maximum values. Most trips are under 26 hours (75th percentile). There may be outliers or data entry issues, given unusually long times.
+ * Tolls:
+   - Mean: 1.07
+   - Median: 0.00
+   - Min/Max: 0.00 – 18.52
+   - Std Dev: 3.34
+   - IQR: 0.00 – 0.00
+   - Most trips do not include tolls (median = 0), but some trips incur very high tolls, creating a heavily right-skewed distribution.
+ * Congestion surcharge:
+   - Mean: 0.97
+   - Median: 0.00
+   - Min/Max: 0.00 – 2.75
+   - Std Dev: 1.31
+   - IQR: 0.00 – 2.75
+   - Many trips do not incur congestion charges (median = 0), but some trips have high surcharges, indicating right-skew.
+ * Airport fee:
+   - Mean: 0.22
+   - median: 0.00
+   - Min/Max: 0.00 – 2.50
+   - Std Dev: 0.71
+   - IQR: 0.00 – 0.00
+   - Most trips do not include airport fees, but a few trips have substantial fees. Highly right-skewed.
+ * Tips:
+   - Mean: 1.16
+   - Median: 0.00
+   - Min/Max: 0.00 – 18.03
+   - Std Dev: 3.11
+   - IQR: 0.00 – 0.00
+   - Most passengers do not tip, but the tip distribution has a long right tail with some high tipping trips.
 
 ---
 
@@ -52,6 +102,14 @@ NYC High-Volume For Hire (FHV) operators and regulators face several challenges:
 
 *(Insert links to scatterplots & grouped bar plots: `img/bivariate_triptime_fare.jpeg`, `img/bivariate_airport_fare.jpeg`, etc.)*
 
+**Scatter plots** 
+
+![EDA Scatter plots](/images/EDA_Scatter_plots.png)
+
+**Bivariate Plots** 
+
+![EDA Bivariate Plots](/images/EDA_bivariate_plots.png)
+
 ---
 
 ## 🛠 Feature Engineering
@@ -59,13 +117,20 @@ NYC High-Volume For Hire (FHV) operators and regulators face several challenges:
 * Derived binary flags: `airport_flag`, `shared_match`, `access_a_ride`.
 * Log transformations to normalize skewed variables (trip time, tips).
 * Standard scaling applied to all numeric features.
-* Interaction terms (e.g., `trip_time × congestion_surcharge`).
+
+**Box-plots of features (log-transformed + standard scaling)** 
+
+![Boxplots of transformed vraiables](/images/Boxplot_log_transformed_standard_scaler.png)
 
 ---
 
 ## 🤖 Modeling
 
 **Algorithm Used:** Linear Regression (Statsmodels OLS)
+
+**Model Summary:** 
+
+![LR Results from Statsmodel](/images/LR_Results.png)
 
 **Model Fit:**
 
@@ -93,7 +158,6 @@ NYC High-Volume For Hire (FHV) operators and regulators face several challenges:
 | **wav_match_flag_1**     | -0.048          | WAV trips reduce fares relative to standard trips                            |
 | **trip_miles**           | -0.045          | Longer trips slightly reduce fares (after scaling/log-transform adjustments) |
 
-*(Insert standardized coefficient bar chart: `img/feature_importance.jpeg` — color-coded by positive vs negative effect)*
 
 ---
 
