@@ -80,16 +80,19 @@ NYC High-Volume For Hire (FHV) operators and regulators face several challenges:
 
 ---
 
-## 🔍 Univariate Analysis (Examples)
+## 🔍 Univariate Analysis (Base Passenger Fares)
 
 * **Trip Time**: Right-skewed distribution; capped extreme outliers.
 * **Tips**: Long-tail distribution; majority trips with minimal tips, few with very high.
 * **Tolls & Surcharges**: Step-like distributions reflecting NYC pricing rules.
 * **Driver Pay**: Concentrated around specific bands; indicative of standardized trip categories.
 
-*(Insert links to histograms & boxplots: `img/univariate_trip_time.jpeg`, `img/univariate_tips.jpeg`, etc.)*
+**Base Fares Distribution** 
 
 ![EDA Base fares Distribution](/images/EDA_base_fares_plot.png)
+
+**Driver Pay Distribution**
+
 
 ---
 
