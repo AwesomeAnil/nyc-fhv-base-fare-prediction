@@ -11,12 +11,12 @@
 5. 🔗 Bivariate Analysis (Examples)  
 6. 🛠 Feature Engineering  
 7. 🤖 Modeling  
-   - 📊 Feature Impact (Standardized Coefficients)  
-8. 🔮 Predictions on New Data  
-9. 💼 Business Impact  
-10. ✅ Takeaways  
-11. 📌 Next Steps  
-12. ⚡ End of Presentation ⚡
+8. 📊 Feature Impact (Standardized Coefficients)  
+9. 🔮 Predictions on New Data  
+10. 💼 Business Impact  
+11. ✅ Takeaways  
+12. 📌 Next Steps  
+13. ⚡ End of Presentation ⚡
 
 ---
 
