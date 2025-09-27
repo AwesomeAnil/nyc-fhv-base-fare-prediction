@@ -39,6 +39,8 @@ NYC High-Volume For Hire (FHV) operators and regulators face several challenges:
 
 *(Insert links to histograms & boxplots: `img/univariate_trip_time.jpeg`, `img/univariate_tips.jpeg`, etc.)*
 
+![EDA Base fares Distribution](/images/EDA_base_fares_plot.png)
+
 ---
 
 ## 🔗 Bivariate Analysis (Examples)
