@@ -163,7 +163,7 @@ NYC High-Volume For Hire (FHV) operators and regulators face several challenges:
 
 ---
 
-### 📊 Feature Impact (Standardized Coefficients)
+## 📊 Feature Impact (Standardized Coefficients)
 
 > *Note: Features were **log-transformed and standardized** before modeling. Coefficients indicate **relative influence**, not absolute fare impact in dollars.*
 
