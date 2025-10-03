@@ -191,6 +191,14 @@ pip install -r requirements.txt
 jupyter lab
 ```
 
+📖 Documentation
+- [Detailed Presentation](/docs/PRESENTATION.md)
+- [Executive Summary (1-pager)](/docs/EXEC_1PAGER.md)
+- [Data Dictionary detailed](/docs/data_dictionary_trip_records_hvfhs.pdf)
+- [notebooks](/notebooks/)
+- [sample data](/sample_data/)
+- [powerbi reports](/powerbi/)
+
 ---
 
 ## 📄 License
