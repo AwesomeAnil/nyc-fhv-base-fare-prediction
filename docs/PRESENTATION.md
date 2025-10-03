@@ -19,6 +19,13 @@
 13. ⚡ End of Presentation ⚡
 
 ---
+## 🎯 Objective
+
+- Predict base passenger fares for NYC High-Volume For Hire Vehicle (FHV) services
+- Build an end-to-end ML pipeline on Microsoft Fabric
+- Support regulators, operators, and riders with transparent, data-driven insights
+
+---
 
 ## 🎯 Business Problem
 
@@ -31,6 +38,19 @@ NYC High-Volume For Hire (FHV) operators and regulators face several challenges:
 * **Operational Strategy**: Segmenting trips (airport vs. city, shared vs. solo) to optimize allocation and profitability.
 
 **Goal:** Build a **predictive model** for base fares that delivers accurate, explainable insights.
+
+---
+
+## 📂 Dataset
+
+- Training data: ~2M trips from June 2025
+- Prediction data: ~20M unseen trips from July 2025
+- Features:
+   - Trip miles, trip time
+   - Surcharges, tolls, tips
+   - Driver pay
+   - Flags: airport, shared rides, WAV, Access-a-Ride
+   - Temporal markers: hour-of-day, weekday/weekend
 
 ---
 
@@ -136,7 +156,10 @@ NYC High-Volume For Hire (FHV) operators and regulators face several challenges:
 
 ## 🛠 Feature Engineering
 
+* Built 77 predictors
+* Transformations: log-normalization, scaling
 * Derived binary flags: `airport_flag`, `shared_match`, `access_a_ride`.
+* Temporal features: peak hours, weekends, weekdays
 * Log transformations to normalize skewed variables (trip time, tips).
 * Standard scaling applied to all numeric features.
 
@@ -146,7 +169,7 @@ NYC High-Volume For Hire (FHV) operators and regulators face several challenges:
 
 ---
 
-## 🤖 Modeling
+## 🤖 Baseline Model
 
 **Algorithm Used:** Linear Regression (Statsmodels OLS)
 
@@ -156,49 +179,79 @@ NYC High-Volume For Hire (FHV) operators and regulators face several challenges:
 
 **Model Fit:**
 
-* **R² = 0.954** → Explains **95.4% of variance** in base passenger fares.
+* **R² = 0.74** → Explains **74% of variance** in base passenger fares, **RMSE = 0.33, MAE = 0.25**.
 * **F-statistic = 3.31e+06, p < 0.001** → Model highly significant.
 * **Durbin-Watson ≈ 2.00** → Residuals show no autocorrelation.
 * **Sample size (N = 1,600,000)** → Results are robust and generalizable.
 
 ---
 
-## 📊 Feature Impact (Standardized Coefficients)
+## 🏆 Model Selection — Advanced Models
 
-> *Note: Features were **log-transformed and standardized** before modeling. Coefficients indicate **relative influence**, not absolute fare impact in dollars.*
+Candidate models:
+- Linear Regression (baseline)
+- XGBoost
+- CatBoost
+- LightGBM
+- Neural Nets (MLPs with PyTorch)
 
-| Feature                  | Relative Effect | Interpretation                                                               |
-| ------------------------ | --------------- | ---------------------------------------------------------------------------- |
-| **bcf**                  | +0.430          | Strongest positive influence on fares                                        |
-| **driver_pay**           | +0.264          | High driver pay correlates with higher fares                                 |
-| **time_of_day_Night**    | +0.022          | Night trips increase fares relative to other times                           |
-| **time_of_day_Morning**  | +0.014          | Morning trips have moderate positive effect                                  |
-| **time_of_day_Evening**  | +0.011          | Evening trips slightly increase fares                                        |
-| **access_a_ride_flag_1** | +0.011          | Small positive effect for accessibility trips                                |
-| **shared_match_flag_1**  | -0.003          | Shared rides slightly reduce fares                                           |
-| **is_weekend_1**         | -0.006          | Weekend trips slightly reduce fares                                          |
-| **wav_match_flag_1**     | -0.048          | WAV trips reduce fares relative to standard trips                            |
-| **trip_miles**           | -0.045          | Longer trips slightly reduce fares (after scaling/log-transform adjustments) |
-
+**Leaderboard Results**:
+| Model                        | R²        | RMSE     | MAE      |
+| ---------------------------- | --------- | -------- | -------- |
+| Linear Regression (baseline) | 0.740     | 0.33     | 0.25     |
+| XGBoost                      | 0.869     | 0.24     | 0.17     |
+| CatBoost                     | 0.870     | 0.24     | 0.17     |
+| Neural Net (basic MLP)       | 0.862     | 0.24     | 0.18     |
+| Neural Net (stronger MLP)    | 0.867     | 0.238    | 0.173    |
+| **LightGBM (best)**          | **0.888** | **0.22** | **0.16** |
 
 ---
 
+## 🌳 Best Model — LightGBM
+
+- **Accuracy**: R² = 0.888, RMSE = 0.22, MAE = 0.16
+- **Feature importance**:
+   - Base calculated fare
+   - Trip miles & trip time
+   - Driver pay
+   - Airport flag, surcharges
+
+#### 📈 Feature Importance Plot
+
+![Feature Importance Plot](/images/Feature_Importance.png)
+
 ## 🔮 Predictions on New Data
 
-* Applied trained regression model to unseen FHV trip records.
-* Generated predicted fares alongside actuals.
-* Validation plots show **tight alignment**, proving model generalization.
+- Applied LightGBM to 20M unseen July 2025 trips
+- Accuracy held strong (R² ≈ 0.87, RMSE ≈ 0.23, MAE ≈ 0.17)
+- Predictions integrated into Power BI dashboards for:
+   - Real-time monitoring
+   - Scenario analysis (e.g., surcharge changes)
+   - Outlier / fraud detection
 
-*(Insert prediction vs. actuals scatterplot: `img/predicted_vs_actual.jpeg`)*
+#### 📈 Predicted vs Actual fares
 
+![Predicted vs. Actual Fares](/images/predicted_vs_actuals.png)
+
+#### 📊 Power BI Report
+
+![Power BI report](/images/power_bi_report_predictions.png)
 ---
 
 ## 💼 Business Impact
 
-* **Revenue Forecasting:** Predictable cashflows for operators.
-* **Pricing Strategy:** Evidence for congestion surcharge / airport pricing debates.
-* **Regulatory Reporting:** Transparent model for TLC compliance.
-* **Fraud Detection:** Highlight outliers where fares deviate significantly from predicted.
+* **Revenue Forecasting**: Accurate monthly projections at scale
+* **Pricing Strategy**: Data-driven surcharge & airport fee evaluation
+* **Regulatory Transparency**: Baseline model provides interpretability
+* **Fraud Prevention**: Outlier detection flags anomalies
+
+---
+
+## 📊 Workflow Summary
+
+#### flowchart LR
+
+![Workflow Summary](/images/Workflow Summary.png)
 
 ---
 
@@ -213,9 +266,10 @@ NYC High-Volume For Hire (FHV) operators and regulators face several challenges:
 
 ## 📌 Next Steps
 
-* Deploy prediction pipeline on **Fabric Lakehouse**.
-* Integrate with **Power BI dashboards** for real-time monitoring.
-* Expand scope with **advanced ML algorithms** for higher accuracy.
+- Extend to **fare + tip prediction**
+- Explore **ensemble models** for added robustness
+- Deploy as **API services** for real-time scoring
+- Expand scope to **regulatory monitoring and compliance dashboards**
 
 ---
 
