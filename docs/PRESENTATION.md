@@ -251,7 +251,7 @@ Candidate models:
 
 #### flowchart LR
 
-![Workflow Summary](/images/Workflow Summary.png)
+![Workflow Summary](/images/Workflow_Summary.png)
 
 ---
 
