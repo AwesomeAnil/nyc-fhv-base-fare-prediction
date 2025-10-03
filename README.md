@@ -176,7 +176,7 @@ We compared a baseline regression model against advanced ML models.
 
 #### 5. LightGBM feature importance plot (Best model) 
 
-![Feature importance](/images/Feature_importance.png)
+![Feature importance](/images/Feature_Importance.png)
 
 #### 6. Predicted vs Actual scatterplot (Predictions on 20M July trips)
 
