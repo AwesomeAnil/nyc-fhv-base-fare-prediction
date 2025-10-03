@@ -3,6 +3,9 @@
 > An end-to-end machine learning pipeline to predict **base passenger taxi fares** in New York City’s High-Volume For Hire Vehicle (FHV) services.
 > Built on **Microsoft Fabric** with Spark, Delta, and modern ML frameworks.
 
+[![Python](https://img.shields.io/badge/Python-3.9%2B-blue)]()  
+[![Machine Learning](https://img.shields.io/badge/ML-LightGBM%20%7C%20Linear%20Regression-green)]()  
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)]()  
 ---
 
 ## 📑 Table of Contents
