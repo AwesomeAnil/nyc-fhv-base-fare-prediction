@@ -1,7 +1,3 @@
-Perfect 🚀 — here’s your **refreshed README.md** with the critical dataset detail (2M June 2025 trips for training and 20M July 2025 trips for predictions) patched in.
-
----
-
 # 🚖 NYC FHV Base Fare Prediction
 
 > An end-to-end machine learning pipeline to predict **base passenger taxi fares** in New York City’s High-Volume For Hire Vehicle (FHV) services.
@@ -202,5 +198,3 @@ jupyter lab
 This project is licensed under the [MIT License](LICENSE).
 
 ---
-
-Do you also want me to **refresh the Presentation.md** with this dataset detail (June training vs July predictions), so both documents are fully consistent?
