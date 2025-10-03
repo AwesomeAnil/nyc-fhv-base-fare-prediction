@@ -1,7 +1,3 @@
-Perfect 🚀 — here’s your **refreshed README.md** with the critical dataset detail (2M June 2025 trips for training and 20M July 2025 trips for predictions) patched in.
-
----
-
 # 🚖 NYC FHV Base Fare Prediction
 
 > An end-to-end machine learning pipeline to predict **base passenger taxi fares** in New York City’s High-Volume For Hire Vehicle (FHV) services.
@@ -21,7 +17,8 @@ Perfect 🚀 — here’s your **refreshed README.md** with the critical dataset
 8. [Business Impact](#-business-impact)
 9. [Visual Story](#-visual-story)
 10. [Getting Started](#-getting-started)
-11. [License](#-license)
+11. [Documentation](#-documentation)
+12. [License](#-license)
 
 ---
 
@@ -41,7 +38,9 @@ This repo demonstrates how to:
 * Deliver accurate fare predictions (**up to 89% accuracy**)
 * Integrate results into **Power BI dashboards** for decision-making
 
-📊 *[Insert pipeline diagram here]*
+#### 📊 *pipeline diagram*
+
+![pipeline](/images/pipeline.png)
 
 ---
 
@@ -193,6 +192,14 @@ pip install -r requirements.txt
 jupyter lab
 ```
 
+## 📖 Documentation
+- [Detailed Presentation](/docs/PRESENTATION.md)
+- [Executive Summary (1-pager)](/docs/EXEC_1PAGER.md)
+- [Data Dictionary detailed](/docs/data_dictionary_trip_records_hvfhs.pdf)
+- [notebooks](/notebooks/)
+- [sample data](/sample_data/)
+- [powerbi reports](/powerbi/)
+
 ---
 
 ## 📄 License
@@ -200,5 +207,3 @@ jupyter lab
 This project is licensed under the [MIT License](LICENSE).
 
 ---
-
-Do you also want me to **refresh the Presentation.md** with this dataset detail (June training vs July predictions), so both documents are fully consistent?
