@@ -4,19 +4,23 @@
 
 # Table of Contents
 
-1. 🚖 NYC FHV Base Fare Prediction  
-2. 🎯 Business Problem  
-3. 📊 Data & EDA Overview  
-4. 🔍 Univariate Analysis (Base Passenger Fares)  
-5. 🔗 Bivariate Analysis (Examples)  
-6. 🛠 Feature Engineering  
-7. 🤖 Modeling  
-8. 📊 Feature Impact (Standardized Coefficients)  
-9. 🔮 Predictions on New Data  
-10. 💼 Business Impact  
-11. ✅ Takeaways  
-12. 📌 Next Steps  
-13. ⚡ End of Presentation ⚡
+1. 🎯 Objective
+2. 🚖 NYC FHV Base Fare Prediction
+3. 🎯 Business Problem
+4. 📂 Dataset
+5. 📊 Data & EDA Overview
+6. 🔍 Univariate Analysis (Base Passenger Fares)
+7. 🔗 Bivariate Analysis (Examples)
+8. 🛠 Feature Engineering
+9. 🤖 Baseline Model
+10. 🏆 Model Selection — Advanced Models
+11. 🌳 Best Model — LightGBM
+12. 🔮 Predictions on New Data
+13. 💼 Business Impact
+14. 📊 Workflow Summary
+15. ✅ Takeaways
+16. 📌 Next Steps
+17. ⚡ End of Presentation ⚡
 
 ---
 ## 🎯 Objective
