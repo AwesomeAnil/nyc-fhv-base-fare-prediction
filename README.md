@@ -162,12 +162,25 @@ We compared a baseline regression model against advanced ML models.
 
 **Recommended visuals for this repo (6 max):**
 
-1. Fare distribution histogram (EDA)
-2. Scatterplot: fare vs miles (EDA)
-3. Regression coefficients bar chart (Baseline model)
-4. Leaderboard bar chart (Model comparison)
-5. LightGBM feature importance plot (Best model)
-6. Predicted vs Actual scatterplot (Predictions on 20M July trips)
+#### 1. Fare distribution (EDA)
+
+![Fare Distribution](/images/EDA_base_fares_plot.png)
+
+#### 2. Scatterplot: fare vs miles, trip times... (EDA)
+
+![Scatter plot of fares](/images/EDA_Scatter_plots.png)
+
+#### 4. Leaderboard bar chart (Model comparison)
+
+![Leaderboard of models](/images/leaderboards.png)
+
+#### 5. LightGBM feature importance plot (Best model) 
+
+![Feature importance](/images/Feature_Importance.png)
+
+#### 6. Predicted vs Actual scatterplot (Predictions on 20M July trips)
+
+![Scatterplots of predicted vs. actuals](/images/predicted_vs_actuals.png)
 
 ---
 
