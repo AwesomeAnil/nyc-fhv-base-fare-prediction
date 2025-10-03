@@ -41,7 +41,7 @@ This repo demonstrates how to:
 * Deliver accurate fare predictions (**up to 89% accuracy**)
 * Integrate results into **Power BI dashboards** for decision-making
 
-#### 📊 *pipeline diagram here*
+#### 📊 *pipeline diagram*
 
 ![pipeline](/images/pipeline.png)
 
