@@ -17,7 +17,8 @@
 8. [Business Impact](#-business-impact)
 9. [Visual Story](#-visual-story)
 10. [Getting Started](#-getting-started)
-11. [License](#-license)
+11. [Documentation](#-documentation)
+12. [License](#-license)
 
 ---
 
@@ -191,7 +192,7 @@ pip install -r requirements.txt
 jupyter lab
 ```
 
-📖 Documentation
+## 📖 Documentation
 - [Detailed Presentation](/docs/PRESENTATION.md)
 - [Executive Summary (1-pager)](/docs/EXEC_1PAGER.md)
 - [Data Dictionary detailed](/docs/data_dictionary_trip_records_hvfhs.pdf)
