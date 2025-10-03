@@ -122,7 +122,7 @@ We compared a baseline regression model against advanced ML models.
 
 #### 📊 *LightGBM feature importance plot*
 
-![Feature Importance](/images/feature_importance.png)
+![Feature Importance](images/Feature_Importance.png)
 
 ---
 
@@ -137,8 +137,13 @@ We compared a baseline regression model against advanced ML models.
   * What-if scenario analysis (e.g., surcharge changes)
   * Fraud detection
 
-📈 *[Insert scatterplot: predicted vs actuals]*
-📊 *[Insert screenshot: Power BI dashboard]*
+#### 📈 *predicted vs actuals*
+
+![Predicted vs. Actuals](/images/predicted_vs_actuals.png)
+
+### 📊 *Power BI dashboard*
+
+![Power BI Report](/images/power_bi_report_predictions.png)
 
 ---
 
