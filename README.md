@@ -1,3 +1,5 @@
+![Banner](/docs/predictions.png)
+
 [![Python](https://img.shields.io/badge/Python-3.9%2B-blue)]()
 [![Power BI](https://img.shields.io/badge/Power%20BI-DAX%20%7C%20Dashboards-orange)]()
 [![Microsoft Fabric](https://img.shields.io/badge/Microsoft%20Fabric-Spark%20%7C%20Delta-purple)]()
