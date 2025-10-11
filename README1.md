@@ -42,8 +42,9 @@ This project demonstrates an **end-to-end ML pipeline**:
 
 | Dataset        | Size        | Key Features |
 |----------------|------------|--------------|
-| Training       | ~2M trips  | Base fare, trip miles & time, surcharges, tips, driver pay, flags (airport/shared/WAV), temporal markers |
-| Predictions    | ~20M trips | Same fields for forecasting |
+| NYC TLC high volume FHV Trip Records | ~20M trips | Access monthly datasets (e.g., June 2025) in Parquet format directly from the NYC Taxi and Limousine Commission. These datasets are ideal for large-scale analysis. 🔗 [NYC TLC High Volume FHV Trip Records](https://www.nyc.gov/site/tlc/about/tlc-trip-record-data.page?utm_source=chatgpt.com) |
+| Training                             | ~2M trips  | from June 2025 trips, Base fare, trip miles & time, surcharges, tips, driver pay, flags (airport/shared/WAV), temporal markers |
+| Predictions                          | ~20M trips | from July 2025 trips, Same fields for forecasting |
 
 📄 [Full Data Dictionary](docs/data_dictionary_trip_records_hvfhs.pdf)
 
@@ -124,6 +125,49 @@ This project demonstrates an **end-to-end ML pipeline**:
    ![Predicted vs Actuals](/images/predicted_vs_actuals.png)  
 6. **Power BI Dashboard snapshot**  
    ![Power BI Report](/images/power_bi_report_predictions.png)  
+
+---
+
+## ☁️ Microsoft Fabric: Powering the Pipeline
+
+This project leverages **Microsoft Fabric** to build a **scalable, end-to-end machine learning pipeline** for NYC FHV fare prediction. Fabric combines **data engineering, lakehouse storage, and real-time analytics** in a unified platform.
+
+### 🔹 Key Features Leveraged
+
+- **Spark Pools**: Efficiently process **millions of FHV trips** with distributed computing.  
+- **Delta Lake**: Ensure **reliable, ACID-compliant storage** and seamless incremental updates.  
+- **Dataflow & Pipelines**: Automate **ETL workflows**, including feature engineering and preprocessing.  
+- **Machine Learning Integration**: Train **LightGBM, XGBoost, and Neural Networks** directly within Fabric.  
+- **Power BI Integration**: Real-time dashboards for **business insights, scenario analysis, and anomaly detection**.  
+
+### 🔹 Workflow Overview
+
+```mermaid
+graph LR
+    %% Node Definitions
+    A("Raw FHV Trip Data")
+    B("Data Lake (Delta)")
+    C("Data Cleaning & Feature Engineering")
+    D("Model Training (ML)")
+    E("Predictions & Evaluation")
+    F("Power BI Dashboards")
+
+    %% Links (Single-Row Horizontal Flow)
+    A --> B
+    B --> C
+    C --> D
+    D --> E
+    E --> F
+
+    %% Styling
+    style A fill:#FF9999,stroke:#333,stroke-width:2px,color:#000;
+    style B fill:#99FF99,stroke:#333,stroke-width:2px,color:#000;
+    style C fill:#9999FF,stroke:#333,stroke-width:2px,color:#000;
+    style D fill:#FFFF99,stroke:#333,stroke-width:2px,color:#000;
+    style E fill:#FFCC99,stroke:#333,stroke-width:2px,color:#000;
+    style F fill:#CC99FF,stroke:#333,stroke-width:2px,color:#000;
+
+```
 
 ---
 
