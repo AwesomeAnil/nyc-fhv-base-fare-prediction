@@ -1,47 +1,38 @@
+[![Python](https://img.shields.io/badge/Python-3.9%2B-blue)]()
+[![Power BI](https://img.shields.io/badge/Power%20BI-DAX%20%7C%20Dashboards-orange)]()
+[![Microsoft Fabric](https://img.shields.io/badge/Microsoft%20Fabric-Spark%20%7C%20Delta-purple)]()
+[![End-to-End ML](https://img.shields.io/badge/End--to--End%20ML-Data%20Prep%20%7C%20Modeling-green)]()
+[![Predictive Analytics](https://img.shields.io/badge/Predictive%20Analytics-Forecasting%20%7C%20Insights-red)]()
+
+
 # 🚖 NYC FHV Base Fare Prediction
 
-> An end-to-end machine learning pipeline to predict **base passenger taxi fares** in New York City’s High-Volume For Hire Vehicle (FHV) services.
-> Built on **Microsoft Fabric** with Spark, Delta, and modern ML frameworks.
+> Predict NYC taxi fares with **up to 89% accuracy** using state-of-the-art ML pipelines and interactive dashboards.  
+> Built with **Microsoft Fabric, Spark, Delta, LightGBM**, and Power BI for real-world impact.
 
 [![Python](https://img.shields.io/badge/Python-3.9%2B-blue)]()  
-[![Machine Learning](https://img.shields.io/badge/ML-LightGBM%20%7C%20Linear%20Regression-green)]()  
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)]()  
----
-
-## 📑 Table of Contents
-
-1. [Project Overview](#-project-overview)
-2. [Dataset](#-dataset)
-3. [Exploratory Data Analysis](#-exploratory-data-analysis)
-4. [Feature Engineering](#-feature-engineering)
-5. [Models & Results](#-models--results)
-6. [Best Model: LightGBM](#-best-model-lightgbm)
-7. [Predictions on New Data](#-predictions-on-new-data)
-8. [Business Impact](#-business-impact)
-9. [Visual Story](#-visual-story)
-10. [Getting Started](#-getting-started)
-11. [Documentation](#-documentation)
-12. [License](#-license)
+[![ML](https://img.shields.io/badge/ML-LightGBM%20%7C%20XGBoost-green)]()  
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)]()
 
 ---
 
 ## 🎯 Project Overview
 
-NYC’s FHV industry generates millions of trips every month. Regulators, operators, and riders all need:
+NYC’s FHV (High-Volume For Hire Vehicle) industry handles **millions of trips every month**. Operators, regulators, and riders need:
 
-* **Pricing transparency** (fair and consistent fares)
-* **Revenue forecasting** (for planning & operations)
-* **Regulatory compliance** (accurate reporting)
-* **Fraud detection** (flagging unusual trips)
+- **Fair & transparent pricing**  
+- **Accurate revenue forecasts**  
+- **Fraud detection & anomaly monitoring**
 
-This repo demonstrates how to:
+This project demonstrates an **end-to-end ML pipeline**:
 
-* Explore and prepare **NYC FHV trip data**
-* Build and evaluate multiple ML models
-* Deliver accurate fare predictions (**up to 89% accuracy**)
-* Integrate results into **Power BI dashboards** for decision-making
+1. Clean & explore **2M NYC FHV trips**  
+2. Engineer **77 predictive features**  
+3. Train & evaluate **multiple ML models**  
+4. Predict fares for **20M unseen trips**  
+5. Integrate results into **interactive Power BI dashboards**  
 
-#### 📊 *pipeline diagram*
+#### 🔄 Pipeline Overview
 
 ![pipeline](/images/pipeline.png)
 
@@ -49,140 +40,134 @@ This repo demonstrates how to:
 
 ## 📂 Dataset
 
-* **Training Data**: ~2M FHV trips sampled from **June 2025**
-* **Predictions Data**: ~20M unseen FHV trips from **July 2025**
-* **Key fields**:
+| Dataset        | Size        | Key Features |
+|----------------|------------|--------------|
+| NYC TLC high volume FHV Trip Records | ~20M trips | Access monthly datasets (e.g., June 2025) in Parquet format directly from the NYC Taxi and Limousine Commission. These datasets are ideal for large-scale analysis. 🔗 [NYC TLC High Volume FHV Trip Records](https://www.nyc.gov/site/tlc/about/tlc-trip-record-data.page?utm_source=chatgpt.com) |
+| Training                             | ~2M trips  | from June 2025 trips, Base fare, trip miles & time, surcharges, tips, driver pay, flags (airport/shared/WAV), temporal markers |
+| Predictions                          | ~20M trips | from July 2025 trips, Same fields for forecasting |
 
-  * Base fare (target)
-  * Trip miles & trip time
-  * Surcharges, tolls, tips
-  * Driver pay
-  * Flags: airport, shared, WAV, access-a-ride
-  * Temporal markers: hour-of-day, day-of-week, weekend
-
-![Full Data Dictionary](/docs/data_dictionary_trip_records_hvfhs.pdf)
+📄 [Full Data Dictionary](docs/data_dictionary_trip_records_hvfhs.pdf)
 
 ---
 
-## 📊 Exploratory Data Analysis
+## 📊 EDA & Feature Engineering
 
-* Base fares: right-skewed, typical range $12–$34
-* Trip miles: short trips dominate, long tail inflates averages
-* Surcharges & tolls: mostly zero, but key predictors of fare
-* Tips: majority zero, but heavy long-tail for some riders
+- **Base fares:** $12–$34, right-skewed  
+- **Trip miles:** many short trips, long-tail effects  
+- **Surcharges & tolls:** mostly zero, but key predictors  
+- **Tips:** mostly zero, heavy-tail for some trips  
 
-#### 📈 *Distribution: base fares Univariate*
+✅ **Feature Engineering Highlights:**  
 
-![Distribution of Base Fares](/images/EDA_base_fares_plot.png)
+- 77 features derived, including temporal, flag, and log-transformed variables  
+- Scaling & normalization applied for model stability  
+- Created interpretable features for regulatory use  
 
-#### 📉 *Bivariate: Scatterplots of fares*
+#### Before vs After Transformation
 
-![Scatterplots of fares](/images/EDA_Scatter_plots.png)
-
-#### 📉 *Bivariate: Boxplots of fares*
-
-![Boxplots of fares](/images/EDA_bivariate_plots.png)
+![Boxplots after log transformation](/images/Boxplot_log_transformed_standard_scaler.png)
 
 ---
 
-## 🛠 Feature Engineering
+## 🤖 Models & Leaderboard
 
-* Derived **77 features** including trip flags, surcharges, and temporal dummies
-* Applied **log-transforms + scaling** to normalize skewed variables
-* Created interpretable features for regulators (airport flag, shared trips, WAV)
+| Model                        | R²    | RMSE  | MAE   |
+|-------------------------------|-------|-------|-------|
+| Linear Regression (baseline)  | 0.740 | 0.33  | 0.25  |
+| XGBoost                       | 0.869 | 0.24  | 0.17  |
+| CatBoost                      | 0.870 | 0.24  | 0.17  |
+| Neural Net (basic MLP)        | 0.862 | 0.24  | 0.18  |
+| Neural Net (stronger MLP)     | 0.867 | 0.238 | 0.173 |
+| **LightGBM (best)**           | **0.888** | **0.22** | **0.16** |
 
-#### 📊 *boxplot: before vs after transformation*
+#### Top Features (LightGBM)
 
-![Boxplots after log transformations](/images/Boxplot_log_transformed_standard_scaler.png)
+1. Base calculated fare  
+2. Trip miles & trip time  
+3. Driver pay  
+4. Surcharges & airport flag  
 
----
-
-## 🤖 Models & Results
-
-We compared a baseline regression model against advanced ML models.
-
-| Model                        | R²        | RMSE     | MAE      |
-| ---------------------------- | --------- | -------- | -------- |
-| Linear Regression (baseline) | 0.740     | 0.33     | 0.25     |
-| XGBoost                      | 0.869     | 0.24     | 0.17     |
-| CatBoost                     | 0.870     | 0.24     | 0.17     |
-| Neural Net (basic MLP)       | 0.862     | 0.24     | 0.18     |
-| Neural Net (stronger MLP)    | 0.867     | 0.238    | 0.173    |
-| **LightGBM (best)**          | **0.888** | **0.22** | **0.16** |
+![Feature Importance](/images/Feature_Importance.png)
 
 ---
 
-## 🌳 Best Model: LightGBM
+## 🔮 Predictions & Business Impact
 
-* **Accuracy**: R² = 0.888, RMSE = 0.22, MAE = 0.16
-* **Top predictors**:
+- **Predicted 20M unseen trips** with R² ≈ 0.87  
+- **Power BI dashboards** enable real-time fare monitoring, scenario analysis, and fraud detection  
 
-  1. Base calculated fare
-  2. Trip miles & trip time
-  3. Driver pay
-  4. Surcharges & airport flag
+#### Predicted vs Actuals
 
-#### 📊 *LightGBM feature importance plot*
+![Predicted vs Actuals](/images/predicted_vs_actuals.png)
 
-![Feature Importance](images/Feature_Importance.png)
+#### Business Benefits
 
----
-
-## 🔮 Predictions on New Data
-
-* Applied the trained LightGBM model to **20M unseen trips from July 2025**
-* Maintained **87% accuracy** (R² ≈ 0.87, RMSE ≈ 0.23, MAE ≈ 0.17)
-* Predictions closely aligned with actuals
-* Integrated into **Power BI dashboards** for:
-
-  * Real-time fare monitoring
-  * What-if scenario analysis (e.g., surcharge changes)
-  * Fraud detection
-
-#### 📈 *predicted vs actuals*
-
-![Predicted vs. Actuals](/images/predicted_vs_actuals.png)
-
-### 📊 *Power BI dashboard*
-
-![Power BI Report](/images/power_bi_report_predictions.png)
+| Goal                     | Impact |
+|---------------------------|--------|
+| Revenue Forecasting       | Near real-time, high-scale predictions (~20M trips/month) |
+| Pricing Strategy          | Evidence-based surcharge & airport trip evaluation |
+| Regulatory Transparency   | Linear Regression baseline ensures interpretability |
+| Fraud Detection           | Outlier predictions highlight anomalies |
 
 ---
 
-## 💼 Business Impact
+## 🖼 Visual Story (Top 6 Highlights)
 
-* **Revenue Forecasting**: Near real-time fare predictions at industry scale (~20M trips/month)
-* **Pricing Strategy**: Evidence-based evaluation of surcharges & airport trips
-* **Regulatory Transparency**: Linear Regression baseline for interpretability
-* **Fraud Detection**: Outlier predictions highlight anomalies
-
-📊 *[Insert infographic: Interpretability ↔ Accuracy trade-off]*
+1. **Fare distribution**  
+   ![Fare Distribution](/images/EDA_base_fares_plot.png)  
+2. **Scatterplots: fare vs miles & time**  
+   ![Scatter plots](/images/EDA_Scatter_plots.png)  
+3. **Leaderboard: model comparison**  
+   ![Leaderboard](/images/leaderboards.png)  
+4. **LightGBM feature importance**  
+   ![Feature importance](/images/Feature_Importance.png)  
+5. **Predicted vs actual fares**  
+   ![Predicted vs Actuals](/images/predicted_vs_actuals.png)  
+6. **Power BI Dashboard snapshot**  
+   ![Power BI Report](/images/power_bi_report_predictions.png)  
 
 ---
 
-## 🖼 Visual Story
+## ☁️ Microsoft Fabric: Powering the Pipeline
 
-**Recommended visuals for this repo (6 max):**
+This project leverages **Microsoft Fabric** to build a **scalable, end-to-end machine learning pipeline** for NYC FHV fare prediction. Fabric combines **data engineering, lakehouse storage, and real-time analytics** in a unified platform.
 
-#### 1. Fare distribution (EDA)
+### 🔹 Key Features Leveraged
 
-![Fare Distribution](/images/EDA_base_fares_plot.png)
+- **Spark Pools**: Efficiently process **millions of FHV trips** with distributed computing.  
+- **Delta Lake**: Ensure **reliable, ACID-compliant storage** and seamless incremental updates.  
+- **Dataflow & Pipelines**: Automate **ETL workflows**, including feature engineering and preprocessing.  
+- **Machine Learning Integration**: Train **LightGBM, XGBoost, and Neural Networks** directly within Fabric.  
+- **Power BI Integration**: Real-time dashboards for **business insights, scenario analysis, and anomaly detection**.  
 
-#### 2. Scatterplot: fare vs miles, trip times... (EDA)
+### 🔹 Workflow Overview
 
-![Scatter plot of fares](/images/EDA_Scatter_plots.png)
+```mermaid
+graph LR
+    %% Node Definitions
+    A("Raw FHV Trip Data")
+    B("Data Lake (Delta)")
+    C("Data Cleaning & Feature Engineering")
+    D("Model Training (ML)")
+    E("Predictions & Evaluation")
+    F("Power BI Dashboards")
 
-#### 4. Leaderboard bar chart (Model comparison)
+    %% Links (Single-Row Horizontal Flow)
+    A --> B
+    B --> C
+    C --> D
+    D --> E
+    E --> F
 
-![Leaderboard of models](/images/leaderboards.png)
+    %% Styling
+    style A fill:#FF9999,stroke:#333,stroke-width:2px,color:#000;
+    style B fill:#99FF99,stroke:#333,stroke-width:2px,color:#000;
+    style C fill:#9999FF,stroke:#333,stroke-width:2px,color:#000;
+    style D fill:#FFFF99,stroke:#333,stroke-width:2px,color:#000;
+    style E fill:#FFCC99,stroke:#333,stroke-width:2px,color:#000;
+    style F fill:#CC99FF,stroke:#333,stroke-width:2px,color:#000;
 
-#### 5. LightGBM feature importance plot (Best model) 
-
-![Feature importance](/images/Feature_Importance.png)
-
-#### 6. Predicted vs Actual scatterplot (Predictions on 20M July trips)
-
-![Scatterplots of predicted vs. actuals](/images/predicted_vs_actuals.png)
+```
 
 ---
 
@@ -191,22 +176,25 @@ We compared a baseline regression model against advanced ML models.
 ```bash
 git clone https://github.com/<your-username>/nyc-fhv-base-fare-prediction.git
 cd nyc-fhv-base-fare-prediction
-pip install -r requirements.txt
-jupyter lab
 ```
+> Optional: Use [sample data](/sample_data/) to explore without full dataset.
+
+---
 
 ## 📖 Documentation
-- [Detailed Presentation](/docs/PRESENTATION.md)
-- [Executive Summary (1-pager)](/docs/EXEC_1PAGER.md)
-- [Data Dictionary detailed](/docs/data_dictionary_trip_records_hvfhs.pdf)
-- [notebooks](/notebooks/)
-- [sample data](/sample_data/)
-- [powerbi reports](/powerbi/)
+
+* [Detailed Presentation](/docs/PRESENTATION.md)
+* [Executive Summary (1-pager)](/docs/EXEC_1PAGER.md)
+* [Data Dictionary](/docs/data_dictionary_trip_records_hvfhs.pdf)
+* [Notebooks](/notebooks/)
+* [Power BI Reports](/powerbi/)
 
 ---
 
 ## 📄 License
 
-This project is licensed under the [MIT License](LICENSE).
+MIT License. See [LICENSE](LICENSE).
 
----
+
+pip install -r requirements.txt
+jupyter lab
