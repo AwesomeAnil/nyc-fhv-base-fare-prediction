@@ -1,3 +1,5 @@
+![Banner](predictions.png)
+
 # 🚖 NYC FHV Base Fare Prediction — Executive 1-Pager
 
 ## 🎯 Objective
