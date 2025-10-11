@@ -1,3 +1,5 @@
+![banner](predictions.png)
+
 # 🚖 NYC FHV Base Fare Prediction
 
 ---
