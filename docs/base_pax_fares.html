@@ -2,84 +2,46 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Base Passenger Fare Prediction</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Power BI Report</title>
   <style>
-    html,body {
-      height:100%;
-      margin:0;
-      font-family:Segoe UI, Roboto, Arial, sans-serif;
-      background:#0D6ABF;
-      color:#222;
-    }
-    .page {
-      display:flex;
-      flex-direction:column;
-      height:100%;
+    html, body {
+      height: 100%;
+      margin: 0;
+      font-family: "Segoe UI", Roboto, Arial, sans-serif;
+      background: #f4f6f9;
     }
     header {
-      padding:12px 18px;
-      background:white;
-      box-shadow:0 1px 4px rgba(0,0,0,0.06);
-      display:flex;
-      align-items:center;
-      gap:12px;
-    }
-    header h1 { font-size:16px; margin:0; }
-    .container {
-      flex:1;
-      display:flex;
-      padding:12px;
-      gap:12px;
+      background: white;
+      padding: 10px 16px;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+      text-align: center;
+      font-size: 16px;
+      font-weight: 600;
+      color: #333;
     }
     .frame-wrap {
-      flex:1;
-      border-radius:8px;
-      overflow:hidden;
-      background:white;
-      box-shadow:0 6px 24px rgba(12,20,35,0.08);
+      width: 100%;
+      height: calc(100vh - 50px);
+      overflow: hidden;
+      border: none;
     }
     iframe {
-      width:100%;
-      height:100%;
-      border:0;
-      min-height:480px;
-      display:block;
+      width: 100%;
+      height: 100%;
+      border: 0;
+      display: block;
     }
-    .notice {
-      max-width:360px;
-      padding:12px;
-      font-size:13px;
-      line-height:1.35;
-    }
-    .muted { color:#666; font-size:13px; margin-top:6px; }
   </style>
 </head>
 <body>
-  <div class="page">
-    <header>
-      <h1>Power BI — NYC Taxi Fare Prediction Report</h1>
-    </header>
-
-    <div class="container">
-      <div class="frame-wrap" aria-hidden="false">
-        <!-- Replace src with your link if you change it -->
-        <iframe
-          title="Power BI Report"
-          src="https://app.powerbi.com/view?r=eyJrIjoiZTdmNWM5YjQtMTEyMy00YWJhLTg2YzEtODZkOTY0MDA0MWNlIiwidCI6ImY2NTRlNzkxLWY4NTgtNDZkNi05MWE5LTE5YzlmZTA4YTc0ZiJ9"
-          allowfullscreen
-        ></iframe>
-      </div>
-
-      <aside class="notice">
-        <strong>Notes</strong>
-        <div class="muted">
-          • If the report does not load, check the browser console for framing/X-Frame errors (some Power BI tenants block embedding).<br>
-          • For secure/controlled embedding (RLS, tokens) use the Power BI JavaScript SDK (example below).<br>
-          • To host: drop this file into a GitHub Pages `docs/` folder or any static host.
-        </div>
-      </aside>
-    </div>
+  <header>Power BI Report</header>
+  <div class="frame-wrap">
+    <iframe
+      title="Power BI Report"
+      src="https://app.powerbi.com/view?r=eyJrIjoiZTdmNWM5YjQtMTEyMy00YWJhLTg2YzEtODZkOTY0MDA0MWNlIiwidCI6ImY2NTRlNzkxLWY4NTgtNDZkNi05MWE5LTE5YzlmZTA4YTc0ZiJ9"
+      allowfullscreen
+    ></iframe>
   </div>
 </body>
 </html>
