@@ -65,7 +65,7 @@
 
 >Performance Report
 
-<iframe title="Performace" width="1024" height="1060" src="https://app.powerbi.com/view?r=eyJrIjoiZmNmNzJjMTktZjIxZi00YmEyLTljYjEtMDlhYTRmYTM4MmU2IiwidCI6ImY2NTRlNzkxLWY4NTgtNDZkNi05MWE5LTE5YzlmZTA4YTc0ZiJ9\\\&pageName=e8008c8aaa7c1395f351" frameborder="0" allowFullScreen="true"></iframe>
+<iframe title="Performace" width="1024" height="1060" src="https://app.powerbi.com/view?r=eyJrIjoiMTQ4OWRmYjMtMzNkNi00MmI3LTk0YzYtOWFjMWMzYTMxYzIyIiwidCI6ImY2NTRlNzkxLWY4NTgtNDZkNi05MWE5LTE5YzlmZTA4YTc0ZiJ9" frameborder="0" allowFullScreen="true"></iframe>
 
 ---
 > Direct Power BI embedded report link
@@ -81,11 +81,13 @@
     title="NYC FHV Base Fare Prediction"
     width="100%" 
     height="700" 
-    src="https://app.powerbi.com/view?r=eyJrIjoiZTdmNWM5YjQtMTEyMy00YWJhLTg2YzEtODZkOTY0MDA0MWNlIiwidCI6ImY2NTRlNzkxLWY4NTgtNDZkNi05MWE5LTE5YzlmZTA4YTc0ZiJ9"
+    src="https://app.powerbi.com/view?r=eyJrIjoiNjlhNzkzNTktMGQ3OC00OTg2LWJhMDUtYjE0MWY0YWMzZDRjIiwidCI6ImY2NTRlNzkxLWY4NTgtNDZkNi05MWE5LTE5YzlmZTA4YTc0ZiJ9"
     frameborder="0" 
     allowFullScreen="true">
   </iframe>
 </div>
+
+
 
 
 ---
