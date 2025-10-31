@@ -66,32 +66,9 @@
 <div style="text-align:center;"> <iframe title="NYC FHV Base Fare Prediction Dashboard" width="100%" height="720" style="border:none; transform: scale(0.7); transform-origin: top center;" src="https://app.powerbi.com/view?r=eyJrIjoiNjlhNzkzNTktMGQ3OC00OTg2LWJhMDUtYjE0MWY0YWMzZDRjIiwidCI6ImY2NTRlNzkxLWY4NTgtNDZkNi05MWE5LTE5YzlmZTA4YTc0ZiJ9" allowFullScreen="true"> </iframe> </div>
 
 ---
+>Performance Report
 
-<div style="width:100%; text-align:center;">
-  <div style="
-      position: relative; 
-      width: 90%; 
-      margin: 0 auto; 
-      overflow: hidden; 
-      padding-top: 56.25%; /* 16:9 aspect ratio */
-      transform: scale(0.7);
-      transform-origin: top center;
-    ">
-    <iframe 
-      src="https://app.powerbi.com/view?r=eyJrIjoiNjlhNzkzNTktMGQ3OC00OTg2LWJhMDUtYjE0MWY0YWMzZDRjIiwidCI6ImY2NTRlNzkxLWY4NTgtNDZkNi05MWE5LTE5YzlmZTA4YTc0ZiJ9
-"
-      style="
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        border: none;
-      "
-      allowfullscreen>
-    </iframe>
-  </div>
-</div>
+<iframe title="Performace" width="1024" height="1060" src="https://app.powerbi.com/view?r=eyJrIjoiZmNmNzJjMTktZjIxZi00YmEyLTljYjEtMDlhYTRmYTM4MmU2IiwidCI6ImY2NTRlNzkxLWY4NTgtNDZkNi05MWE5LTE5YzlmZTA4YTc0ZiJ9\\\&pageName=e8008c8aaa7c1395f351" frameborder="0" allowFullScreen="true"></iframe>
 
 ---
 > Direct Power BI embedded report link
