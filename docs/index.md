@@ -63,9 +63,6 @@
 
 ---
 
-<div style="text-align:center;"> <iframe title="NYC FHV Base Fare Prediction Dashboard" width="100%" height="720" style="border:none; transform: scale(0.7); transform-origin: top center;" src="https://app.powerbi.com/view?r=eyJrIjoiNjlhNzkzNTktMGQ3OC00OTg2LWJhMDUtYjE0MWY0YWMzZDRjIiwidCI6ImY2NTRlNzkxLWY4NTgtNDZkNi05MWE5LTE5YzlmZTA4YTc0ZiJ9" allowFullScreen="true"> </iframe> </div>
-
----
 >Performance Report
 
 <iframe title="Performace" width="1024" height="1060" src="https://app.powerbi.com/view?r=eyJrIjoiZmNmNzJjMTktZjIxZi00YmEyLTljYjEtMDlhYTRmYTM4MmU2IiwidCI6ImY2NTRlNzkxLWY4NTgtNDZkNi05MWE5LTE5YzlmZTA4YTc0ZiJ9\\\&pageName=e8008c8aaa7c1395f351" frameborder="0" allowFullScreen="true"></iframe>
@@ -74,6 +71,22 @@
 > Direct Power BI embedded report link
 
 <iframe title="Base Pax Fares" width="600" height="373.5" src="https://app.powerbi.com/view?r=eyJrIjoiNjlhNzkzNTktMGQ3OC00OTg2LWJhMDUtYjE0MWY0YWMzZDRjIiwidCI6ImY2NTRlNzkxLWY4NTgtNDZkNi05MWE5LTE5YzlmZTA4YTc0ZiJ9" frameborder="0" allowFullScreen="true"></iframe>
+
+---
+
+## 📊 Executive Power BI Dashboard  
+
+<div align="center">
+  <iframe 
+    title="NYC FHV Base Fare Prediction"
+    width="100%" 
+    height="700" 
+    src="https://app.powerbi.com/view?r=eyJrIjoiZTdmNWM5YjQtMTEyMy00YWJhLTg2YzEtODZkOTY0MDA0MWNlIiwidCI6ImY2NTRlNzkxLWY4NTgtNDZkNi05MWE5LTE5YzlmZTA4YTc0ZiJ9"
+    frameborder="0" 
+    allowFullScreen="true">
+  </iframe>
+</div>
+
 
 ---
 
