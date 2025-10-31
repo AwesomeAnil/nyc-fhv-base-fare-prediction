@@ -53,13 +53,13 @@
 ---
 
 ## 💡 Power BI Executive Dashboard  
-> **Interactive analytics portal for leadership decision-making.**
+> **Base fares training and prediction accuracy.**
 
 <div align="center">
 <!-- 👉 Replace below link with your actual Power BI embed link -->
-<iframe width="100%" height="650px" src="[https://app.powerbi.com/view?r=YOUR_EMBED_CODE_HERE](https://app.powerbi.com/view?r=eyJrIjoiNjlhNzkzNTktMGQ3OC00OTg2LWJhMDUtYjE0MWY0YWMzZDRjIiwidCI6ImY2NTRlNzkxLWY4NTgtNDZkNi05MWE5LTE5YzlmZTA4YTc0ZiJ9)" frameborder="0" allowFullScreen="true"></iframe>
+<iframe width="100%" height="650px" src="https://app.powerbi.com/view?r=eyJrIjoiNjlhNzkzNTktMGQ3OC00OTg2LWJhMDUtYjE0MWY0YWMzZDRjIiwidCI6ImY2NTRlNzkxLWY4NTgtNDZkNi05MWE5LTE5YzlmZTA4YTc0ZiJ9
+" frameborder="0" allowFullScreen="true"></iframe>
 </div>
-
 ---
 
 ## 🧩 Repository Overview  
