@@ -55,6 +55,8 @@
 ## 💡 Power BI Executive Dashboard  
 > **Base fares training and prediction accuracy.**
 
+[🔗 View Base Fare Prediction Report (New tab)](https://awesomeanil.github.io/nyc-fhv-base-fare-prediction/BaseFare.html)
+
 <div align="center">
 <!-- 👉 Replace below link with your actual Power BI embed link -->
 <iframe width="100%" height="650px" src="https://app.powerbi.com/view?r=eyJrIjoiZmNkZWM4NzEtZDZkNy00OGY1LTlhN2MtNjY3NjMwMDA4NzRmIiwidCI6ImY2NTRlNzkxLWY4NTgtNDZkNi05MWE5LTE5YzlmZTA4YTc0ZiJ9" frameborder="0" allowFullScreen="true"></iframe>
