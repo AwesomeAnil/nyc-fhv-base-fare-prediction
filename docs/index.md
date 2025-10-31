@@ -66,11 +66,11 @@
 | Folder | Description |
 |:--|:--|
 | `README.md` | High-level summary |
-| `docs/EXEC_1PAGER.md` | Investor-ready executive brief |
-| `docs/PRESENTATION.md` | Storyboard presentation |
+| `docs/| Docs for repo |
+| `images/` | screenshots and visuals of charts |
 | `notebooks/` | Data prep, EDA & model notebooks |
-| `models/` | Trained models & metrics |
-| `powerbi/` | PBIX files for dashboard visualisation |
+| `sample_data/` | samples of raw NYC TLC parquet data |
+| `powerbi/` | PDF files of dashboards & reports |
 
 ---
 
@@ -93,10 +93,16 @@
 
 ---
 
-## 📚 Related Documentation  
-- [📄 Executive 1-Pager](./docs/EXEC_1PAGER.md)  
-- [🎤 Presentation Narrative](./docs/PRESENTATION.md)  
-- [🧮 Notebook Gallery](./notebooks)  
+## 📚 Project Documentation
+
+| 📄 Document | 🔍 Description |
+|--------------|----------------|
+| [🧠 **Analysis Flow**](analysis_flow.md) | End-to-end overview of the project pipeline — from data acquisition, engineering, and modeling, to visualization and insights delivery. |
+| [⚙️ **Configuration Guide**](CONFIGURATION.md) | Detailed setup instructions for environment variables, file paths, and parameter tuning. Ideal for contributors or users running the pipeline locally or in Microsoft Fabric. |
+| [💻 **Environment Setup**](ENVIRONMENT.md) | Step-by-step guide to setting up the Python, PySpark, and Fabric environments — including dependencies, versioning, and reproducibility practices. |
+| [📈 **Executive 1-Pager**](EXEC_1PAGER.md) | Concise summary tailored for executives and stakeholders — highlights business objectives, outcomes, and key success metrics. |
+| [🎯 **Presentation Deck**](PRESENTATION.md) | Visual storytelling of the project’s journey — data strategy, insights, model performance, and business impact designed for boardroom delivery. |
+
 
 ---
 
