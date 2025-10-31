@@ -57,38 +57,8 @@
 
 <div align="center">
 <!-- 👉 Replace below link with your actual Power BI embed link -->
-<iframe width="100%" height="650px" src="https://app.powerbi.com/view?r=eyJrIjoiNjlhNzkzNTktMGQ3OC00OTg2LWJhMDUtYjE0MWY0YWMzZDRjIiwidCI6ImY2NTRlNzkxLWY4NTgtNDZkNi05MWE5LTE5YzlmZTA4YTc0ZiJ9
-" frameborder="0" allowFullScreen="true"></iframe>
+<iframe width="100%" height="650px" src="https://app.powerbi.com/view?r=eyJrIjoiZmNkZWM4NzEtZDZkNy00OGY1LTlhN2MtNjY3NjMwMDA4NzRmIiwidCI6ImY2NTRlNzkxLWY4NTgtNDZkNi05MWE5LTE5YzlmZTA4YTc0ZiJ9" frameborder="0" allowFullScreen="true"></iframe>
 </div>
-
----
-
->Performance Report
-
-<iframe title="Performace" width="1024" height="1060" src="https://app.powerbi.com/view?r=eyJrIjoiMTQ4OWRmYjMtMzNkNi00MmI3LTk0YzYtOWFjMWMzYTMxYzIyIiwidCI6ImY2NTRlNzkxLWY4NTgtNDZkNi05MWE5LTE5YzlmZTA4YTc0ZiJ9" frameborder="0" allowFullScreen="true"></iframe>
-
----
-> Direct Power BI embedded report link
-
-<iframe title="Base Pax Fares" width="600" height="373.5" src="https://app.powerbi.com/view?r=eyJrIjoiNjlhNzkzNTktMGQ3OC00OTg2LWJhMDUtYjE0MWY0YWMzZDRjIiwidCI6ImY2NTRlNzkxLWY4NTgtNDZkNi05MWE5LTE5YzlmZTA4YTc0ZiJ9" frameborder="0" allowFullScreen="true"></iframe>
-
----
-
-## 📊 Executive Power BI Dashboard  
-
-<div align="center">
-  <iframe 
-    title="NYC FHV Base Fare Prediction"
-    width="100%" 
-    height="700" 
-    src="https://app.powerbi.com/view?r=eyJrIjoiNjlhNzkzNTktMGQ3OC00OTg2LWJhMDUtYjE0MWY0YWMzZDRjIiwidCI6ImY2NTRlNzkxLWY4NTgtNDZkNi05MWE5LTE5YzlmZTA4YTc0ZiJ9"
-    frameborder="0" 
-    allowFullScreen="true">
-  </iframe>
-</div>
-
-
-
 
 ---
 
