@@ -94,6 +94,11 @@
 </div>
 
 ---
+> Direct Power BI embedded report link
+
+<iframe title="Base Pax Fares" width="600" height="373.5" src="https://app.powerbi.com/view?r=eyJrIjoiNjlhNzkzNTktMGQ3OC00OTg2LWJhMDUtYjE0MWY0YWMzZDRjIiwidCI6ImY2NTRlNzkxLWY4NTgtNDZkNi05MWE5LTE5YzlmZTA4YTc0ZiJ9" frameborder="0" allowFullScreen="true"></iframe>
+
+---
 
 ## 🧩 Repository Overview  
 | Folder | Description |
