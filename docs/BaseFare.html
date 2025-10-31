@@ -3,9 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>NYC FHV Base Fare Executive Dashboard</title>
+  <title>Base Fare Dashboard</title>
 
-  <!-- Minimal built-in styling -->
   <style>
     body {
       font-family: "Segoe UI", Roboto, Arial, sans-serif;
@@ -52,6 +51,30 @@
       border-radius: 8px;
     }
 
+    .share-section {
+      margin: 1rem auto 0;
+      text-align: center;
+    }
+
+    .share-buttons a {
+      display: inline-block;
+      margin: 0 8px;
+      padding: 8px 14px;
+      border-radius: 6px;
+      color: white;
+      text-decoration: none;
+      font-size: 0.9rem;
+      transition: background 0.3s;
+    }
+
+    .linkedin { background-color: #0077B5; }
+    .twitter  { background-color: #1DA1F2; }
+    .facebook { background-color: #3B5998; }
+
+    .linkedin:hover { background-color: #005983; }
+    .twitter:hover  { background-color: #0d8ce0; }
+    .facebook:hover { background-color: #2d4373; }
+
     footer {
       margin: 2rem 0 1rem;
       font-size: 0.9rem;
@@ -72,7 +95,7 @@
 
   <header>
     <h1>NYC FHV Base Fare Executive Dashboard</h1>
-    <p>Predictive Modeling & Insights for High-Volume For-Hire Vehicles</p>
+    <p>Predictive Modeling & Insights of High-Volume For-Hire Vehicles</p>
   </header>
 
   <main>
@@ -83,6 +106,22 @@
         src="https://app.powerbi.com/view?r=eyJrIjoiZmNkZWM4NzEtZDZkNy00OGY1LTlhN2MtNjY3NjMwMDA4NzRmIiwidCI6ImY2NTRlNzkxLWY4NTgtNDZkNi05MWE5LTE5YzlmZTA4YTc0ZiJ9"
         allowFullScreen="true">
       </iframe>
+
+      <!-- Social Share Buttons -->
+      <div class="share-section">
+        <p><strong>Share this dashboard</strong></p>
+        <div class="share-buttons">
+          <a class="linkedin" 
+             href="https://www.linkedin.com/sharing/share-offsite/?url=https://awesomeanil.github.io/nyc-fhv-base-fare-prediction/BaseFare.html" 
+             target="_blank">LinkedIn</a>
+          <a class="twitter" 
+             href="https://twitter.com/intent/tweet?text=Check%20out%20this%20Power%20BI%20Executive%20Dashboard!&url=https://awesomeanil.github.io/nyc-fhv-base-fare-prediction/BaseFare.html" 
+             target="_blank">Twitter</a>
+          <a class="facebook" 
+             href="https://www.facebook.com/sharer/sharer.php?u=https://awesomeanil.github.io/nyc-fhv-base-fare-prediction/BaseFare.html" 
+             target="_blank">Facebook</a>
+        </div>
+      </div>
     </div>
   </main>
 
