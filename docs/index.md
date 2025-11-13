@@ -59,7 +59,7 @@
 
 <div align="center">
 <!-- 👉 Replace below link with your actual Power BI embed link -->
-<iframe title="Base Pax Fares" width="300" height="373.5" src="https://app.powerbi.com/view?r=eyJrIjoiZWUyYmQ4ODEtYzJkNS00NGQ3LTgxYWYtZmU4YmJlZTE3OTQwIiwidCI6ImY2NTRlNzkxLWY4NTgtNDZkNi05MWE5LTE5YzlmZTA4YTc0ZiJ9" frameborder="0" allowFullScreen="true"></iframe>
+<iframe title="Base Pax Fares" width="600" height="486" src="https://app.powerbi.com/view?r=eyJrIjoiZWUyYmQ4ODEtYzJkNS00NGQ3LTgxYWYtZmU4YmJlZTE3OTQwIiwidCI6ImY2NTRlNzkxLWY4NTgtNDZkNi05MWE5LTE5YzlmZTA4YTc0ZiJ9" frameborder="0" allowFullScreen="true"></iframe>
 </div>
 
 ---
